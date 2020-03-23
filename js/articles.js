@@ -1,6 +1,6 @@
 ﻿var articles = [
     {
-	    banner:"img/Elvetia/banner.jpg",
+	    banner:"img/elvetia/banner.jpg",
         title: "Elveția: simplitate și tehnologie",
         date: "Februarie 2019",
         category: "Europa",
@@ -9,7 +9,7 @@
     },
     [
         {
-	        banner:"img/Elvetia/banner.jpg",
+	        banner:"img/elvetia/banner.jpg",
             title: "Elveția: simplitate și tehnologie",
             date: "Februarie 2019",
             category: "Europa",
@@ -17,7 +17,7 @@
             description: "Opt zile, sute de mii de pași, trenuri, ciocolată, din inima orașelor tehnologizate în colțuri natură parcă uitate. Stereotipuri, clișee, bani și brânză. Harta traseului parcurs în încercarea de a nu lăsa nimic nedescoperit."
         },
         {
-	        banner:"img/Elvetia/banner.jpg",
+	        banner:"img/elvetia/banner.jpg",
             title: "Elveția: simplitate și tehnologie",
             date: "Februarie 2019",
             category: "Europa",
