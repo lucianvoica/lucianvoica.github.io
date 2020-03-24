@@ -1,4 +1,4 @@
-﻿var itemsPerPage = 1;
+﻿var itemsPerPage = 5;
 (function () {
     var pageIndex = parseInt(document.getElementById("pageNumber").innerText);
 
