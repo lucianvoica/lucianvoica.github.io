@@ -1,13 +1,22 @@
-﻿(function(){
-    var eElement = document.getElementById("articles-div");
+﻿var itemsPerPage = 1;
+(function () {
+    var pageIndex = parseInt(document.getElementById("pageNumber").innerText);
 
-    var art = GetArticles();
+    InitPage(pageIndex)
+
+})();
+
+function InitPage(pageIndex) {
+    debugger;
+    var eElement = document.getElementById("articles-div");
+    eElement.innerHTML = "";
+    var art = GetArticles(pageIndex, itemsPerPage);
     art.forEach(function (item) {
         if (item.child.length == 1) {
             var article = GenerateArticle(item.child[0]);
             eElement.innerHTML += article;
         } else {
-        var element
+            var element
             var element = '<div class="row">';
             item.child.forEach(function (smallArticle) {
                 var smallArticle = GenerateArticle(smallArticle, true);
@@ -15,10 +24,48 @@
             });
             element += '</div>';
             eElement.innerHTML += element;
-		}
+        }
     });
-})();
+    var numberOfArticleLines = GetArticleLinesCount();
+    if (numberOfArticleLines >= itemsPerPage) {
+        document.getElementById("articles-pagination").innerHTML = GetPaginationTemplate(pageIndex, numberOfArticleLines);
+    }
+}
 
+function ChangePage(index) {
+    document.getElementById("pageNumber").innerText = index;
+    InitPage(index);
+}
+
+function GetPaginationTemplate(pageIndex, nbLines) {
+    var nav = '<nav class="blog-pagination justify-content-center d-flex">\
+        <ul class="pagination" >';
+    if (pageIndex > 1) {
+        nav += '<li class="page-item" onclick="ChangePage(' + (pageIndex - 1) + ')">\
+                    <a href="#" class="page-link" aria-label="Previous">\
+                        <span aria-hidden="true">\
+                            <span class="lnr lnr-chevron-left"></span>\
+                        </span>\
+                    </a>\
+                </li>';
+    }
+    for (var i = 1; i <= (nbLines / itemsPerPage); i++) {
+        nav += '<li class="page-item ' + (i == pageIndex? 'active':'') + '" onclick="ChangePage('+i+')"><a href="#" class="page-link">'+ i +'</a></li>';
+    }
+    if (pageIndex < nbLines / itemsPerPage) {
+        nav += '<li class="page-item" onclick="ChangePage(' + (pageIndex + 1) +')">\
+                    <a href = "#" class="page-link" aria-label="Next" >\
+                        <span aria-hidden="true">\
+                            <span class="lnr lnr-chevron-right"></span>\
+                        </span>\
+                            </a>\
+                        </li>';
+    }
+
+    nav += '</ul>\
+    </nav>';
+    return nav;
+}
 function GenerateArticle(item, small = false) {
         var article = "";
         if(small) { 

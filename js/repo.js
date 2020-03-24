@@ -44,20 +44,36 @@ var articles = [
     }
 ];
 
-function GetArticles() {
+function GetArticles(pageIndex, itemPerPage) {
+    var articleLinesAux = articleLines;
+    var neededArticleLines = articleLinesAux.slice((pageIndex - 1) * itemPerPage, pageIndex * itemPerPage);
+
+    var neededArticles = [];
+
+    neededArticleLines.forEach(function (item) {
+        neededArticles.push(articles.filter(obj => {
+            return obj.articleLineId === item.id
+        }));
+    });
+    neededArticles = [].concat.apply([], neededArticles);
+
     var fullArt = [];
-    articles.forEach(function (item) {
+    neededArticles.forEach(function (item) {
         item.country = countries.filter(obj => {
             return obj.id === item.countryId
         })[0].name;
         fullArt.push(item);
     });
 
-    articleLines.forEach(function (articleLine) {
-        articleLine.child = articles.filter(obj => {
+    neededArticleLines.forEach(function (articleLine) {
+        articleLine.child = neededArticles.filter(obj => {
             return obj.articleLineId === articleLine.id
         });
     });
 
-    return articleLines.sort((a, b) => (a.order > b.order) ? 1 : -1);
+    return neededArticleLines.sort((a, b) => (a.order > b.order) ? 1 : -1);
+}
+
+function GetArticleLinesCount() {
+    return articleLines.length;
 }

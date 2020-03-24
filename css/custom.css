@@ -10,3 +10,7 @@
 .header-picture {
 	width: 150px!important;
 }
+
+.hidden {
+	display: none;
+}
