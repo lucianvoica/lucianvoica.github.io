@@ -13,6 +13,8 @@ var articles = [
     {
         id: 1,
         banner: "img/elvetia/banner.jpg",
+        thumbnail: "img/elvetia/thumbnail.png",
+        isPopular: true,
         title: "Elveția: simplitate și tehnologie",
         date: "Februarie 2019",
         countryId: 1,
@@ -24,6 +26,8 @@ var articles = [
     {
         id: 2,
         banner: "img/italia/banner.jpg",
+        thumbnail: "img/italia/thumbnail.png",
+        isPopular: true,
         title: "Italia: Milano și Como",
         date: "Mai 2019",
         countryId: 3,
@@ -44,6 +48,12 @@ var articles = [
         description: "Itinerariu de 5 zile în Bucovina, Iași și Piatra Neamț."
     }
 ];
+
+function GetPopularArticles() {
+    return articles.filter(obj => {
+        return obj.isPopular === true;
+    })
+}
 
 function GetArticles(pageIndex, itemPerPage) {
     var articleLinesAux = articleLines;

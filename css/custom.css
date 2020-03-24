@@ -1,3 +1,7 @@
+body {
+	font-family: inherit;
+}
+
 .header_area + section, .header_area + div {
 	margin-top: 46px
 }
@@ -13,4 +17,9 @@
 
 .hidden {
 	display: none;
+}
+
+.padding-footer {
+	padding-top: 50px;
+	padding-bottom: 30px;
 }

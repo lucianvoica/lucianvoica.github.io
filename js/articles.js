@@ -1,10 +1,22 @@
 ﻿var itemsPerPage = 5;
 (function () {
     var pageIndex = parseInt(document.getElementById("pageNumber").innerText);
-
     InitPage(pageIndex)
 
+    InitStaticElements();
 })();
+
+function InitStaticElements() {
+    InitPopularPosts();
+}
+
+function InitPopularPosts() {
+    var container = document.getElementById("popular-posts-div");
+    var articles = GetPopularArticles();
+    articles.forEach(function (item) {
+        container.innerHTML += GeneratePopularArticle(item);
+    });
+}
 
 function InitPage(pageIndex) {
     var eElement = document.getElementById("articles-div");
@@ -127,3 +139,20 @@ function getWordsBetweenCurlies(str) {
   return results;
 }
 
+function GeneratePopularArticle(item) {
+    var article = GetPopularBlocTemplate();
+    var variables = getWordsBetweenCurlies(article);
+    variables.forEach(function (variable) {
+        article = article.replace("{" + variable + "}", item[variable]);
+    });
+    return article;
+}
+function GetPopularBlocTemplate() {
+    return '<div class="media post_item">\
+                <img src = "{thumbnail}" alt="post">\
+                <div class="media-body">\
+                    <a href="{page}"><h3>{title}</h3></a>\
+                    <p>{date}</p>\
+                </div>\
+            </div>';
+}
