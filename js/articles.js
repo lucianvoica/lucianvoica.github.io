@@ -7,7 +7,6 @@
 })();
 
 function InitPage(pageIndex) {
-    debugger;
     var eElement = document.getElementById("articles-div");
     eElement.innerHTML = "";
     var art = GetArticles(pageIndex, itemsPerPage);
