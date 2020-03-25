@@ -76,3 +76,21 @@ app.directive("doubleSummaryArticle", function () {
         }
     };
 });
+
+app.component('heroList', {
+    templateUrl: '../templates/summaryArticleBig.html',
+    controller: function ($scope, RepoFactory) {
+        $scope.dispArticleLines = RepoFactory.GetArticleLines();
+        $scope.filteredArticleLines = []
+            , $scope.currentPage = 1
+            , $scope.numPerPage = 5
+            , $scope.maxSize = 5;
+
+        $scope.$watch("currentPage + numPerPage", function () {
+            var begin = (($scope.currentPage - 1) * $scope.numPerPage)
+                , end = begin + $scope.numPerPage;
+
+            $scope.filteredArticleLines = $scope.dispArticleLines.slice(begin, end);
+        });
+    }
+});

@@ -1,26 +1,14 @@
-﻿    <div ng-switch="item.length">
-        <div ng-switch-when="1">
-            mare
-        </div>
-        <div ng-switch-when="1">
-            mic
-        </div>
-    </div>
-
-    <article class="blog_style1">
-        <div class="blog_img">
-            <img class="img-fluid" src="{{item[0].banner}}" alt="{{item[0].title}}">
-        </div>
-        <div class="blog_text">
-            <div class="blog_text_inner">
-                <div class="cat">
-                    <a class="cat_btn" href="#">Citește</a>
-                    <a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> {{item[0].date}}</a>
-                    <a href="#"><i class="fa fa-map-pin" aria-hidden="true"></i> {{item[0].country}} - {{item[0].category}}</a>
-                </div>
-                <a href="#"><h4>{{item[0].title}}</h4></a>
-                <p>{{item[0].description}}</p>
-                <a class="blog_btn" href="{{item[0].page}}">Mai mult...</a>
-            </div>
-        </div>
+﻿<div ng-repeat="article in filteredArticleLines">
+    <article ng-if="article.child.length == 1" class="blog_style1" single-summary-article item="article.child">
     </article>
+    <article ng-if="article.child.length == 2" class="blog_style1" double-summary-article item="article.child">
+    </article>
+</div>
+<pagination ng-if="dispArticleLines.length > numPerPage"
+            ng-model="currentPage"
+            total-items="dispArticleLines.length"
+            max-size="maxSize"
+            items-per-page="numPerPage"
+            boundary-links=false
+            next-text=">" previous-text="<">
+</pagination>

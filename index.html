@@ -112,6 +112,7 @@
                         <div id="pageNumber">1</div>
                     </div>
                     <div class="blog_left_sidebar">
+                        <hero-list></hero-list>
                         <div ng-repeat="article in filteredArticleLines">
                             <article ng-if="article.child.length == 1" class="blog_style1" single-summary-article item="article.child">
                             </article>
@@ -124,8 +125,7 @@
                                     max-size="maxSize"
                                     items-per-page="numPerPage"
                                     boundary-links=false
-                                    next-text=">" previous-text="<"
-                                    >
+                                    next-text=">" previous-text="<">
                         </pagination>
                         <div id="articles-pagination">
 
