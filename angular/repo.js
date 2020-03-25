@@ -1,4 +1,4 @@
-﻿app.factory('RepoFactory', function () {
+﻿app.factory('RepoFactory', function() {
     var articleLines = [
         { id: 1, order: 1 },
         { id: 2, order: 2 },
@@ -13,11 +13,10 @@
     function GetCountryById(id) {
         return countries.filter(obj => {
             return obj.id === id
-        });
+        })[0];
     }
 
-    var articles = [
-        {
+    var articles = [{
             id: 1,
             banner: "img/elvetia/banner.jpg",
             thumbnail: "img/elvetia/thumbnail.png",
@@ -63,9 +62,9 @@
             return obj.isPopular === true;
         })
     }
-    
+
     factory.GetArticleLines = function() {
-        articleLines.forEach(function (articleLine) {
+        articleLines.forEach(function(articleLine) {
             articleLine.child = articles.filter(obj => {
                 return obj.articleLineId === articleLine.id
             });
