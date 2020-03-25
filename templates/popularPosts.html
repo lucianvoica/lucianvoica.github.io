@@ -1,0 +1,11 @@
+<div ng-repeat="post in popularPosts">
+    <div class="media post_item">
+        <img src="{post.thumbnail}" alt="post.title">
+        <div class="media-body">
+            <a href="{post.page}">
+                <h3>{post.title}</h3>
+            </a>
+            <p>{post.date}</p>
+        </div>
+    </div>
+</div>

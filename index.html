@@ -1,5 +1,6 @@
 ﻿<!doctype html>
 <html lang="en">
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -25,8 +26,8 @@
 
     <link rel="stylesheet" href="css/custom.css">
 </head>
-<body ng-app="mainApp">
 
+<body ng-app="mainApp">
     <!--================Header Menu Area =================-->
     <header class="header_area">
         <div class="main_menu">
@@ -80,8 +81,7 @@
                                 </div>
                                 <h4>Lucian VOICA: Jurnal de călătorie</h4>
                                 <p>
-                                    Vă invit să descoperim împreună locuri splendide văzute prin ochi amatori. Călătoriile mele înseamnă mulți pași, din zorii zilei până seara,
-                                    după fiecare astfel de concediu este nevoie de un post-concediu pentru odihnă.
+                                    Vă invit să descoperim împreună locuri splendide văzute prin ochi amatori. Călătoriile mele înseamnă mulți pași, din zorii zilei până seara, după fiecare astfel de concediu este nevoie de un post-concediu pentru odihnă.
                                 </p>
                                 <a class="blog_btn" href="#bodysection">Descoperă</a>
                             </div>
@@ -104,7 +104,7 @@
     </section>
     <!--================End Home Banner Area =================-->
     <!--================Blog Area =================-->
-    <section class="blog_area p_120" id="bodysection" ng-controller="summaryArticlesCtrl">
+    <section class="blog_area p_120" id="bodysection">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
@@ -112,24 +112,7 @@
                         <div id="pageNumber">1</div>
                     </div>
                     <div class="blog_left_sidebar">
-                        <hero-list></hero-list>
-                        <div ng-repeat="article in filteredArticleLines">
-                            <article ng-if="article.child.length == 1" class="blog_style1" single-summary-article item="article.child">
-                            </article>
-                            <article ng-if="article.child.length == 2" class="blog_style1" double-summary-article item="article.child">
-                            </article>
-                        </div>
-                        <pagination ng-if="dispArticleLines.length > numPerPage"
-                                    ng-model="currentPage"
-                                    total-items="dispArticleLines.length"
-                                    max-size="maxSize"
-                                    items-per-page="numPerPage"
-                                    boundary-links=false
-                                    next-text=">" previous-text="<">
-                        </pagination>
-                        <div id="articles-pagination">
-
-                        </div>
+                        <summary-articles></summary-articles>
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -140,12 +123,15 @@
                                 <span class="input-group-btn">
                                     <button class="btn btn-default" type="button"><i class="lnr lnr-magnifier"></i></button>
                                 </span>
-                            </div><!-- /input-group -->
+                            </div>
+                            <!-- /input-group -->
                             <div class="br"></div>
                         </aside>
                         <aside class="single_sidebar_widget author_widget">
                             <img class="author_img img-fluid" src="img/blog/author.png" alt="">
-                            <a href="https://doitacademy.ro"><h4>Do IT Academy</h4></a>
+                            <a href="https://doitacademy.ro">
+                                <h4>Do IT Academy</h4>
+                            </a>
                             <p>Ai face ceva?</p>
                             <p class="font-italic">„Credem ca aceste cursuri pot fi inceputul unor frumoase cariere pentru voi, in care sa va descoperiti pasiunile si sa fiti rasplatiti pentru ceea ce faceti.”</p>
                             <div class="social_icon">
@@ -157,7 +143,7 @@
                         </aside>
                         <aside class="single_sidebar_widget popular_post_widget">
                             <h3 class="widget_title">Popular Posts</h3>
-                            <div id="popular-posts-div"></div>
+                            <popular-posts></popular-posts>
                             <div class="br"></div>
                         </aside>
                         <aside class="single_sidebar_widget post_category_widget">
@@ -196,7 +182,7 @@
                 <div class="col-lg-3  col-md-6 col-sm-6">
                     <div class="single-footer-widget">
                         <h6 class="footer_title">Despre mine</h6>
-                        <p class="">Tânăr programator pasionat de călătorie, arhitectură, artă și fotografie am decis să fac un mic blog cu scopul unei amintiri personale digitale.</p>
+                        <p class="">Programator pasionat de călătorie, arhitectură, artă și fotografie am decis să fac un mic blog cu scopul unei amintiri personale digitale.</p>
                         <a href="about.html">Mai mult...</a>
                     </div>
                 </div>
@@ -234,7 +220,9 @@
                 <p class="col-lg-12 footer-text text-right">
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     Copyright &copy;
-                    <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                    <script>
+                        document.write(new Date().getFullYear());
+                    </script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                 </p>
             </div>
@@ -267,4 +255,5 @@
     <script src="angular/summaryArticles.js"></script>
 
 </body>
+
 </html>

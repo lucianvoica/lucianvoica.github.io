@@ -1,19 +1,19 @@
 ﻿var itemsPerPage = 1;
-(function () {
+(function() {
     var pageIndex = parseInt(document.getElementById("pageNumber").innerText);
     //InitPage(pageIndex)
 
-    InitStaticElements();
+    // InitStaticElements();
 })();
 
 function InitStaticElements() {
-    InitPopularPosts();
+    //InitPopularPosts();
 }
 
 function InitPopularPosts() {
     var container = document.getElementById("popular-posts-div");
     var articles = GetPopularArticles();
-    articles.forEach(function (item) {
+    articles.forEach(function(item) {
         container.innerHTML += GeneratePopularArticle(item);
     });
 }
@@ -22,14 +22,14 @@ function InitPage(pageIndex) {
     var eElement = document.getElementById("articles-div");
     eElement.innerHTML = "";
     var art = GetArticles(pageIndex, itemsPerPage);
-    art.forEach(function (item) {
+    art.forEach(function(item) {
         if (item.child.length == 1) {
             var article = GenerateArticle(item.child[0]);
             eElement.innerHTML += article;
         } else {
             var element
             var element = '<div class="row">';
-            item.child.forEach(function (smallArticle) {
+            item.child.forEach(function(smallArticle) {
                 var smallArticle = GenerateArticle(smallArticle, true);
                 element += smallArticle;
             });
@@ -61,10 +61,10 @@ function GetPaginationTemplate(pageIndex, nbLines) {
                 </li>';
     }
     for (var i = 1; i <= (nbLines / itemsPerPage); i++) {
-        nav += '<li class="page-item ' + (i == pageIndex? 'active':'') + '" onclick="ChangePage('+i+')"><a href="#" class="page-link">'+ i +'</a></li>';
+        nav += '<li class="page-item ' + (i == pageIndex ? 'active' : '') + '" onclick="ChangePage(' + i + ')"><a href="#" class="page-link">' + i + '</a></li>';
     }
     if (pageIndex < nbLines / itemsPerPage) {
-        nav += '<li class="page-item" onclick="ChangePage(' + (pageIndex + 1) +')">\
+        nav += '<li class="page-item" onclick="ChangePage(' + (pageIndex + 1) + ')">\
                     <a href = "#" class="page-link" aria-label="Next" >\
                         <span aria-hidden="true">\
                             <span class="lnr lnr-chevron-right"></span>\
@@ -77,19 +77,21 @@ function GetPaginationTemplate(pageIndex, nbLines) {
     </nav>';
     return nav;
 }
+
 function GenerateArticle(item, small = false) {
-        var article = "";
-        if(small) { 
-            article = GetSmallArticleTemplate();
-        } else {
-            article = GetArticleTemplate();
-		}
-        var variables = getWordsBetweenCurlies(article);
-        variables.forEach(function(variable) {
-            article = article.replace("{"+variable+"}", item[variable]);
-        });
-        return article;
+    var article = "";
+    if (small) {
+        article = GetSmallArticleTemplate();
+    } else {
+        article = GetArticleTemplate();
+    }
+    var variables = getWordsBetweenCurlies(article);
+    variables.forEach(function(variable) {
+        article = article.replace("{" + variable + "}", item[variable]);
+    });
+    return article;
 }
+
 function GetArticleTemplate() {
     return '<article class="blog_style1"> \
                 <div class="blog_img"> \
@@ -109,6 +111,7 @@ function GetArticleTemplate() {
 				</div>\
             </article>';
 }
+
 function GetSmallArticleTemplate() {
     return '<div class="col-md-6">\
                 <article class="blog_style1 small"> \
@@ -130,23 +133,27 @@ function GetSmallArticleTemplate() {
                 </article>\
             </div>';
 }
-function getWordsBetweenCurlies(str) {
-  var results = [], re = /{([^}]+)}/g, text;
 
-  while(text = re.exec(str)) {
-    results.push(text[1]);
-  }
-  return results;
+function getWordsBetweenCurlies(str) {
+    var results = [],
+        re = /{([^}]+)}/g,
+        text;
+
+    while (text = re.exec(str)) {
+        results.push(text[1]);
+    }
+    return results;
 }
 
 function GeneratePopularArticle(item) {
     var article = GetPopularBlocTemplate();
     var variables = getWordsBetweenCurlies(article);
-    variables.forEach(function (variable) {
+    variables.forEach(function(variable) {
         article = article.replace("{" + variable + "}", item[variable]);
     });
     return article;
 }
+
 function GetPopularBlocTemplate() {
     return '<div class="media post_item">\
                 <img src = "{thumbnail}" alt="post">\

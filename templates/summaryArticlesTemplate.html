@@ -1,0 +1,8 @@
+<div ng-repeat="article in filteredArticleLines">
+    <article ng-if="article.child.length == 1" class="blog_style1" single-summary-article item="article.child">
+    </article>
+    <article ng-if="article.child.length == 2" class="blog_style1" double-summary-article item="article.child">
+    </article>
+</div>
+<pagination ng-if="dispArticleLines.length > numPerPage" ng-model="currentPage" total-items="dispArticleLines.length" max-size="maxSize" items-per-page="numPerPage" boundary-links=false next-text=">" previous-text="<">
+</pagination>

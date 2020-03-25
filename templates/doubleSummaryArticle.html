@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="col-md-6" ng-repeat="child in item">
+        <article class="blog_style1 small">
+            <div class="blog_img">
+                <img class="img-fluid" src="{{child.banner}}" alt="{{child.title}}">
+            </div>
+            <div class="blog_text">
+                <div class="blog_text_inner">
+                    <div class="cat">
+                        <a class="cat_btn" href="#">Citește</a>
+                        <a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> {{child.date}}</a>
+                        <a href="#"><i class="fa fa-map-pin" aria-hidden="true"></i> {{child.country}} - {{child.category}}</a>
+                    </div>
+                    <a href="#">
+                        <h4>{{child.title}}</h4>
+                    </a>
+                    <p>{{child.description}}</p>
+                    <a class="blog_btn" href="{{child.page}}">Mai mult...</a>
+                </div>
+            </div>
+        </article>
+    </div>
+</div>
