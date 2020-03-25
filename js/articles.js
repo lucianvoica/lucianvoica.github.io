@@ -1,7 +1,7 @@
-﻿var itemsPerPage = 5;
+﻿var itemsPerPage = 1;
 (function () {
     var pageIndex = parseInt(document.getElementById("pageNumber").innerText);
-    InitPage(pageIndex)
+    //InitPage(pageIndex)
 
     InitStaticElements();
 })();

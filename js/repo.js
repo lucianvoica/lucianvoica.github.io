@@ -1,6 +1,16 @@
 ﻿var articleLines = [
     { id: 1, order: 1 },
-    { id: 2, order: 2 }
+    { id: 2, order: 2 },
+    { id: 2, order: 3 },
+    { id: 1, order: 1 },
+    { id: 2, order: 2 },
+    { id: 2, order: 3 },
+    { id: 1, order: 1 },
+    { id: 2, order: 2 },
+    { id: 2, order: 3 },
+    { id: 1, order: 1 },
+    { id: 2, order: 2 },
+    { id: 2, order: 3 }
 ];
 
 var countries = [
@@ -9,6 +19,11 @@ var countries = [
     { id: 3, name: "Italia" }
 ];
 
+function GetCountryById(id) {
+    return countries.filter(obj => {
+        return obj.id === id
+    });
+}
 var articles = [
     {
         id: 1,
@@ -17,7 +32,7 @@ var articles = [
         isPopular: true,
         title: "Elveția: simplitate și tehnologie",
         date: "Februarie 2019",
-        countryId: 1,
+        country: GetCountryById(1).name,
         articleLineId: 1,
         category: "Europa",
         page: "~/elvetia.html",
@@ -30,7 +45,7 @@ var articles = [
         isPopular: true,
         title: "Italia: Milano și Como",
         date: "Mai 2019",
-        countryId: 3,
+        country: GetCountryById(3).name,
         articleLineId: 2,
         category: "Europa",
         page: "~/italia.html",
@@ -41,7 +56,7 @@ var articles = [
         banner: "img/romania/banner.jpg",
         title: "România: circuit în Bucovina",
         date: "august 2019",
-        countryId: 2,
+        country: GetCountryById(2).name,
         articleLineId: 2,
         category: "Europa",
         page: "~/romania.html",
@@ -53,6 +68,15 @@ function GetPopularArticles() {
     return articles.filter(obj => {
         return obj.isPopular === true;
     })
+}
+
+function GetArticleLines() {
+    articleLines.forEach(function (articleLine) {
+        articleLine.child = articles.filter(obj => {
+            return obj.articleLineId === articleLine.id
+        });
+    });
+    return articleLines.sort((a, b) => (a.order > b.order) ? 1 : -1);
 }
 
 function GetArticles(pageIndex, itemPerPage) {
@@ -67,14 +91,6 @@ function GetArticles(pageIndex, itemPerPage) {
         }));
     });
     neededArticles = [].concat.apply([], neededArticles);
-
-    var fullArt = [];
-    neededArticles.forEach(function (item) {
-        item.country = countries.filter(obj => {
-            return obj.id === item.countryId
-        })[0].name;
-        fullArt.push(item);
-    });
 
     neededArticleLines.forEach(function (articleLine) {
         articleLine.child = neededArticles.filter(obj => {

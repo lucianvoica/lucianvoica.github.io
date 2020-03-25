@@ -28,3 +28,24 @@ body {
 	width: 65px;
 	height: 65px;
 }
+
+.pagination li
+{
+	padding: 0;
+}
+.pagination li a {
+	padding: 10px 20px;
+	border: 1px solid lightgray;
+	color: black;
+}
+	.pagination li a:hover {
+		background-color: lightgray;
+	}
+	.pagination li.disabled a {
+		visibility: hidden;
+	}
+	.pagination li.active a {
+		background-color: #9c7e35;
+		border-color: #9c7e35;
+		color: white;
+	}
