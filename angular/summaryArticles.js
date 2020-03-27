@@ -1,9 +1,10 @@
-﻿app.component('summaryArticles', {
+﻿var summaryArticleApp = angular.module("summaryArticleApp", ['mainApp', 'ui.bootstrap']);
+summaryArticleApp.component('summaryArticles', {
     templateUrl: '../templates/summaryArticlesTemplate.html',
     controller: function($scope, RepoFactory) {
         $scope.dispArticleLines = RepoFactory.GetArticleLines();
         $scope.filteredArticleLines = [], $scope.currentPage = 1, $scope.numPerPage = 5, $scope.maxSize = 5;
-
+        debugger;
         $scope.$watch("currentPage + numPerPage", function() {
             var begin = (($scope.currentPage - 1) * $scope.numPerPage),
                 end = begin + $scope.numPerPage;
@@ -13,7 +14,7 @@
     }
 });
 
-app.directive("singleSummaryArticle", function() {
+summaryArticleApp.directive("singleSummaryArticle", function() {
     return {
         restrict: "A",
         templateUrl: '../templates/singleSummaryArticle.html',
@@ -25,7 +26,7 @@ app.directive("singleSummaryArticle", function() {
     };
 });
 
-app.directive("doubleSummaryArticle", function() {
+summaryArticleApp.directive("doubleSummaryArticle", function() {
     return {
         restrict: "A",
         templateUrl: '../templates/doubleSummaryArticle.html',

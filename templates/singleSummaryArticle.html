@@ -5,15 +5,15 @@
     <div class="blog_text">
         <div class="blog_text_inner">
             <div class="cat">
-                <a class="cat_btn" href="#">Citește</a>
-                <a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> {{item[0].date}}</a>
-                <a href="#"><i class="fa fa-map-pin" aria-hidden="true"></i> {{item[0].country}} - {{item[0].category}}</a>
+                <a class="cat_btn" href="{{item[0].link}}">Citește</a>
+                <span></a><i class="fa fa-calendar" aria-hidden="true"></i> {{item[0].date}}</a>
+                <span><i class="fa fa-map-pin" aria-hidden="true"></i> {{item[0].country}} - {{item[0].category}}</a>
             </div>
-            <a href="#">
+            <a href="{{item[0].link}}">
                 <h4>{{item[0].title}}</h4>
             </a>
             <p>{{item[0].description}}</p>
-            <a class="blog_btn" href="{{item[0].page}}">Mai mult...</a>
+            <a class="blog_btn" href="{{item[0].link}}">Mai mult...</a>
         </div>
     </div>
 </article>

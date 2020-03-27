@@ -1,14 +1,12 @@
-﻿<!doctype html>
-<html lang="en">
+<!doctype html>
+<html lang="ro" ng-app="circuitApp" ng-controller="circuitController">
 
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="img/favicon.png" type="image/png">
-    <title>Jurnal de călătorie</title>
-    <meta name="description" content="Vă invit să descoperim împreună locuri splendide văzute prin ochi amatori. Călătoriile mele înseamnă mulți pași, din zorii zilei până seara, după fiecare astfel de concediu este nevoie de un post-concediu pentru odihnă.">
-
+    <title>Opium Blog</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="vendors/linericon/style.css">
@@ -18,35 +16,34 @@
     <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
     <link rel="stylesheet" href="vendors/animate-css/animate.css">
     <link rel="stylesheet" href="vendors/jquery-ui/jquery-ui.css">
-
     <!-- main css -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
 
-
     <link rel="stylesheet" href="css/custom.css">
 </head>
 
-<body ng-app="summaryArticleApp">
+<body>
+
     <!--================Header Menu Area =================-->
     <header class="header_area">
         <div class="main_menu">
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container box_1620">
                     <!-- Brand and toggle get grouped for better mobile display -->
-                    <a class="navbar-brand logo_h" href="index.html"><span class="font-weight-bold">LVL</span> | Blog personal</a>
+                    <a class="navbar-brand logo_h" href="index.html"><img src="img/logo.png" alt=""></a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                         <ul class="nav navbar-nav menu_nav">
-                            <li class="nav-item active"><a class="nav-link" href="index.html"><b>Jurnal de călătorie</b></a>|</li>
+                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                             <li class="nav-item"><a class="nav-link" href="category.html">Category</a></li>
                             <li class="nav-item"><a class="nav-link" href="archive.html">Archive</a></li>
-                            <li class="nav-item submenu dropdown">
+                            <li class="nav-item submenu dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages</a>
                                 <ul class="dropdown-menu">
                                     <li class="nav-item"><a class="nav-link" href="single-blog.html">Sinlge Blog</a></li>
@@ -56,8 +53,10 @@
                             <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right header_social ml-auto">
-                            <li class="nav-item"><a href="https://www.facebook.com/voicalucian"><i class="fa fa-facebook"></i></a></li>
-                            <li class="nav-item"><a href="https://www.instagram.com/lucianvoica/"><i class="fa fa-instagram"></i></a></li>
+                            <li class="nav-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li class="nav-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li class="nav-item"><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                            <li class="nav-item"><a href="#"><i class="fa fa-behance"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -65,37 +64,17 @@
         </div>
     </header>
     <!--================Header Menu Area =================-->
+
     <!--================Home Banner Area =================-->
-    <section class="home_banner_area">
+    <section class="banner_area" style="background: url({{model.banner}}) no-repeat scroll center left;  background-size: cover;">
         <div class="container">
-            <div class="row">
+            <div class="row banner_inner">
                 <div class="col-lg-5"></div>
                 <div class="col-lg-7">
-                    <div class="blog_text_slider owl-carousel">
-                        <div class="item">
-                            <div class="blog_text">
-                                <div class="cat">
-                                    <a class="cat_btn" href="contact.html">Contact</a>
-                                    <i class="fa fa-calendar" aria-hidden="true"></i> 23 Martie 2020
-                                    <img src="img/banner/profile.jpg" class="rounded-circle pull-right profile-picture" alt="Lucian VOICA">
-                                </div>
-                                <h4>Lucian VOICA: Jurnal de călătorie</h4>
-                                <p>
-                                    Vă invit să descoperim împreună locuri splendide văzute prin ochi amatori. Călătoriile mele înseamnă mulți pași, din zorii zilei până seara, după fiecare astfel de concediu este nevoie de un post-concediu pentru odihnă.
-                                </p>
-                                <a class="blog_btn" href="#bodysection">Descoperă</a>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="blog_text">
-                                <div class="cat">
-                                    <i class="fa fa-calendar" aria-hidden="true"></i> Februarie 2019
-                                    <img src="img/banner/elv-thumb.jpg" class="pull-right header-picture responsive" alt="Lucian VOICA">
-                                </div>
-                                <h4>Elveția</h4>
-                                <p>Opt zile, sute de mii de pași, trenuri, ciocolată, din inima orașelor tehnologizate în colțuri natură parcă uitate.</p>
-                                <a class="blog_btn" href="#bodysection">Citește</a>
-                            </div>
+                    <div class="banner_content text-center">
+                        <h2>{{model.title}}</h2>
+                        <div class="page_link">
+                            <p>{{model.description}}</p>
                         </div>
                     </div>
                 </div>
@@ -103,13 +82,15 @@
         </div>
     </section>
     <!--================End Home Banner Area =================-->
+
     <!--================Blog Area =================-->
     <section class="blog_area p_120" id="bodysection">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
                     <div class="blog_left_sidebar">
-                        <summary-articles></summary-articles>
+                        aici e blog
+                        <!-- <summary-articles></summary-articles> -->
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -172,6 +153,7 @@
         </div>
     </section>
     <!--================Blog Area =================-->
+
     <!--================ start footer Area  =================-->
     <footer class="footer-area padding-footer">
         <div class="container">
@@ -226,6 +208,10 @@
         </div>
     </footer>
     <!--================ End footer Area  =================-->
+
+
+
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="js/jquery-3.2.1.min.js"></script>
@@ -243,11 +229,11 @@
     <script src="js/theme.js"></script>
 
     <script src="vendors/angular.js"></script>
-    <script src="vendors/anguler-tpls.js"></script>
 
     <script src="angular/main.js"></script>
     <script src="angular/repo.js"></script>
-    <script src="angular/summaryArticles.js"></script>
+    <script src="angular/circuit.js"></script>
+
     <script src="angular/popularPosts.js"></script>
 </body>
 

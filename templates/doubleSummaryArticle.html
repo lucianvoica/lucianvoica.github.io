@@ -7,15 +7,15 @@
             <div class="blog_text">
                 <div class="blog_text_inner">
                     <div class="cat">
-                        <a class="cat_btn" href="#">Citește</a>
-                        <a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> {{child.date}}</a>
-                        <a href="#"><i class="fa fa-map-pin" aria-hidden="true"></i> {{child.country}}</a>
+                        <a class="cat_btn" href="{{child.link}}">Citește</a>
+                        <i class="fa fa-calendar" aria-hidden="true"></i> {{child.date}}
+                        <i class="fa fa-map-pin" aria-hidden="true"></i> {{child.country}}
                     </div>
-                    <a href="#">
+                    <a href="{{child.link}}">
                         <h4>{{child.title}}</h4>
                     </a>
                     <p>{{child.description}}</p>
-                    <a class="blog_btn" href="{{child.page}}">Mai mult...</a>
+                    <a class="blog_btn" href="{{child.link}}">Mai mult...</a>
                 </div>
             </div>
         </article>
