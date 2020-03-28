@@ -12,17 +12,18 @@ repo.factory('RepoFactory', function() {
     ];
 
     var photos = [
-        { id: 1, path: "img/galery/italia1", legend: "Domul din Milano" },
-        { id: 2, path: "img/galery/italia2", legend: "Galeriile Vittorio Emanuele II" },
-        { id: 3, path: "img/galery/italia3", legend: "Milano" },
-        { id: 4, path: "img/galery/italia4", legend: "Harta circuit" }
+        { id: 1, path: "img/galery/italia1.jpg", legend: "Domul din Milano" },
+        { id: 2, path: "img/galery/italia2.jpg", legend: "Galeriile Vittorio Emanuele II" },
+        { id: 3, path: "img/galery/thumbnailMilano.jpg", legend: "Milano" },
+        { id: 4, path: "img/galery/italia4.jpg", legend: "Harta circuit" }
     ];
 
     var cityArticles = [{
         id: 1,
         cityId: 1,
         title: "Două zile în Milano",
-        thumbnail: 3
+        thumbnail: 3,
+        page: 'city.html?doua-zile-in-milano'
     }];
 
     var paragraphTypes = [
@@ -82,7 +83,7 @@ repo.factory('RepoFactory', function() {
             articleId: 2,
             type: 4,
             text: "<p>Italia, ce țară minunată. Pizza, paste și iubire - primele 3 cuvinte-clișeu la care mă gândesc atunci când vine vorba de Italia.</p>",
-            galery: 4
+            galery: [4]
         },
         {
             id: 2,
@@ -104,7 +105,7 @@ repo.factory('RepoFactory', function() {
             articleId: 2,
             type: 6,
             text: "<p>După care am început călătoria la pas prin oraș și am vizitat foarte multe lucruri.</p>",
-            cityArticle: GetCityArticleById(1)
+            cityArticle: 1
         }
     ];
 
@@ -119,9 +120,6 @@ repo.factory('RepoFactory', function() {
         return GetById(countries, id);
     }
 
-    function GetCityArticleById(id) {
-        return GetById(cityArticles, id);
-    }
     //#endregion
 
     var factory = {};
@@ -149,6 +147,14 @@ repo.factory('RepoFactory', function() {
             return obj.articleId === article.id;
         });
         return article;
+    }
+
+    factory.GetPhotoById = function(id) {
+        return GetById(photos, id);
+    }
+
+    factory.GetCityArticleById = function(id) {
+        return GetById(cityArticles, id);
     }
 
     return factory;

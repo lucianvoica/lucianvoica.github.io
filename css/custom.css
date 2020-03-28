@@ -1,51 +1,91 @@
 body {
-	font-family: inherit;
+    font-family: inherit;
 }
 
-.header_area + section, .header_area + div {
-	margin-top: 46px
+.header_area+section,
+.header_area+div {
+    margin-top: 46px
 }
 
 .profile-picture {
-	width: 100px!important;
-	height: 100px!important
+    width: 100px!important;
+    height: 100px!important
 }
 
 .header-picture {
-	width: 150px!important;
+    width: 150px!important;
 }
 
 .hidden {
-	display: none;
+    display: none;
 }
 
 .padding-footer {
-	padding-top: 50px;
-	padding-bottom: 30px;
+    padding-top: 50px;
+    padding-bottom: 30px;
 }
 
 .instafeed li img {
-	width: 65px;
-	height: 65px;
+    width: 65px;
+    height: 65px;
 }
 
-.pagination li
-{
-	padding: 0;
+.pagination li {
+    padding: 0;
 }
+
 .pagination li a {
-	padding: 10px 20px;
-	border: 1px solid lightgray;
-	color: black;
+    padding: 10px 20px;
+    border: 1px solid lightgray;
+    color: black;
 }
-	.pagination li a:hover {
-		background-color: lightgray;
-	}
-	.pagination li.disabled a {
-		visibility: hidden;
-	}
-	.pagination li.active a {
-		background-color: #9c7e35;
-		border-color: #9c7e35;
-		color: white;
-	}
+
+.pagination li a:hover {
+    background-color: lightgray;
+}
+
+.pagination li.disabled a {
+    visibility: hidden;
+}
+
+.pagination li.active a {
+    background-color: #9c7e35;
+    border-color: #9c7e35;
+    color: white;
+}
+
+.main_blog_details p {
+    text-align: justify;
+    font-size: 1.2em;
+    text-indent: 50px;
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    background-image: linear-gradient(#2d2d2d00, #000);
+}
+
+.thumbnail {
+    width: 120px;
+}
+
+.paragraph-card {
+    background-color: #f9f9ff;
+    border-radius: 15px;
+    margin: 10px 0;
+}
+
+.paragraph-card td {
+    padding: 0;
+}
+
+.paragraph-card .paragraph-card-body {
+    padding: 0 20px;
+}

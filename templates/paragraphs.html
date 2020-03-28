@@ -1,0 +1,37 @@
+<div ng-repeat="paragraph in $parent.model.paragraphs">
+    <div ng-if="paragraph.type == 1" class="mb-10" ng-bind-html="paragraph.text">
+    </div>
+    <div ng-if="paragraph.type == 2" class="row">
+        <div class="col-md-6" ng-bind-html="paragraph.text"></div>
+        <div class="col-md-6" photo-carousel photos="paragraph.galeryPhotos" car-id="paragraph.id"></div>
+    </div>
+    <div ng-if="paragraph.type == 3" class="row">
+        <div class="col-md-6" photo-carousel photos="paragraph.galeryPhotos" car-id="paragraph.id"></div>
+        <div class="col-md-6 " ng-bind-html="paragraph.text"></div>
+    </div>
+    <div ng-if="paragraph.type == 4" class="row">
+        <div class="col-md-8" ng-bind-html="paragraph.text"></div>
+        <div class="col-md-4 text-center">
+            <img ng-src="{{paragraph.galeryPhotos[0].path}}" alt="{{paragraph.photo.legend}}" class="img-fluid">
+        </div>
+    </div>
+    <div ng-if="paragraph.type == 5">
+        <div photo-carousel photos="paragraph.galeryPhotos" car-id="paragraph.id"></div>
+    </div>
+    <div ng-if="paragraph.type == 6">
+        <table class="shadow paragraph-card">
+            <tr>
+                <td class="thumbnail">
+                    <img ng-src="{{paragraph.city.thumbnail}}" alt="{{paragraph.city.title}}" class="img-fluid">
+                </td>
+                <td class="paragraph-card-body">
+                    <div>Citește și: </div>
+                    <a href="{{paragraph.city.page}}">
+                        <h3>{{paragraph.city.title}}</h3>
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+</div>

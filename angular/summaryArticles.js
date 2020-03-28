@@ -4,7 +4,6 @@ summaryArticleApp.component('summaryArticles', {
     controller: function($scope, RepoFactory) {
         $scope.dispArticleLines = RepoFactory.GetArticleLines();
         $scope.filteredArticleLines = [], $scope.currentPage = 1, $scope.numPerPage = 5, $scope.maxSize = 5;
-        debugger;
         $scope.$watch("currentPage + numPerPage", function() {
             var begin = (($scope.currentPage - 1) * $scope.numPerPage),
                 end = begin + $scope.numPerPage;
