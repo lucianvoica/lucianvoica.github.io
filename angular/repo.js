@@ -82,7 +82,8 @@ repo.factory('RepoFactory', function() {
             id: 1,
             articleId: 2,
             type: 4,
-            text: "<p>Italia, ce țară minunată. Pizza, paste și iubire - primele 3 cuvinte-clișeu la care mă gândesc atunci când vine vorba de Italia.</p>",
+            text: "<p>Italia, ce țară minunată. Pizza, paste și iubire - primele 3 cuvinte-clișeu la care mă gândesc atunci când vine vorba de Italia.</p>" +
+                "<ol><b>Itinerariu:</b><li>Milano</li><li>Varenna</li><li>Bellagio</li><li>Como</li><li>Bergamo</li></ol>",
             galery: [4]
         },
         {
