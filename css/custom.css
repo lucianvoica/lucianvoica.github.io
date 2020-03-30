@@ -109,6 +109,7 @@ table.itinerary tr td:nth-child(odd) {
     width: 50px;
     background-color: #9c7e35;
     color: white;
+    font-size: 14px;
 }
 
 table.itinerary tr td:nth-child(odd):not(:last-child):before {
@@ -129,4 +130,5 @@ table.itinerary tr td:last-child:before {
     font-family: 'FontAwesome';
     position: relative;
     content: "\f015";
+    font-size: 20px;
 }
