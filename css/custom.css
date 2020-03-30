@@ -57,7 +57,7 @@ body {
 .main_blog_details p {
     text-align: justify;
     font-size: 1.2em;
-    text-indent: 50px;
+    padding: 10px 0;
 }
 
 .carousel-caption {
@@ -88,4 +88,45 @@ body {
 
 .paragraph-card .paragraph-card-body {
     padding: 0 20px;
+}
+
+.banner_area .banner_inner .banner_content {
+    background-color: #ffffff9c;
+}
+
+table.itinerary {
+    width: 100%;
+    padding-bottom: 15px;
+}
+
+table.itinerary tr {
+    text-align: center;
+    color: #9c7e35;
+    border-bottom: 3px solid #9c7e35;
+}
+
+table.itinerary tr td:nth-child(odd) {
+    width: 50px;
+    background-color: #9c7e35;
+    color: white;
+}
+
+table.itinerary tr td:nth-child(odd):not(:last-child):before {
+    font-family: 'FontAwesome';
+    position: relative;
+    left: -3px;
+    content: "\f073";
+}
+
+table.itinerary tr td:nth-child(odd):not(:last-child):after {
+    font-family: 'FontAwesome';
+    position: relative;
+    left: 3px;
+    content: "\f061";
+}
+
+table.itinerary tr td:last-child:before {
+    font-family: 'FontAwesome';
+    position: relative;
+    content: "\f015";
 }
