@@ -102,14 +102,18 @@ table.itinerary {
 table.itinerary tr {
     text-align: center;
     color: #9c7e35;
-    border-bottom: 3px solid #9c7e35;
+}
+
+table.itinerary tr td {
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 table.itinerary tr td:nth-child(odd) {
-    width: 50px;
     background-color: #9c7e35;
     color: white;
     font-size: 14px;
+    border-radius: 25px;
 }
 
 table.itinerary tr td:nth-child(odd):not(:last-child):before {

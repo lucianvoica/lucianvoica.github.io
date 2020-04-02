@@ -49,7 +49,7 @@ repo.factory('RepoFactory', function() {
             country: GetCountryById(1).name,
             articleLineId: 1,
             category: "Europa",
-            link: "circuit.html?elvetia-simplitate-si-tehnologie",
+            link: "circuite.html?elvetia-simplitate-si-tehnologie",
             description: "Opt zile, sute de mii de pași, trenuri, ciocolată, din inima orașelor tehnologizate în colțuri natură parcă uitate. Stereotipuri, clișee, bani și brânză. Harta traseului parcurs în încercarea de a nu lăsa nimic nedescoperit."
         },
         {
@@ -62,7 +62,7 @@ repo.factory('RepoFactory', function() {
             country: GetCountryById(3).name,
             articleLineId: 2,
             category: "Europa",
-            link: "circuit.html?italia-milano-si-lacul-como",
+            link: "circuite.html?italia-milano-si-lacul-como",
             description: "City break de 4 zile, suficient pentru a vedea 5 localități magnifice."
         },
         {
