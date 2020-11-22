@@ -22,7 +22,9 @@ repo.factory('RepoFactory', function() {
         { id: 8, path: "img/galery/como4.jpg", legend: "Bellagio" },
         { id: 9, path: "img/galery/como5.jpg", legend: "Vaporaș pe lacul Como" },
         { id: 10, path: "img/galery/como6.jpg", legend: "Bellagio" },
-        { id: 11, path: "img/galery/como7.jpg", legend: "Portul Como" }
+        { id: 11, path: "img/galery/como7.jpg", legend: "Portul Como" },
+        { id: 12, path: "img/galery/como8.jpg", legend: "Funicular Bergamo" },
+        { id: 13, path: "img/galery/como9.jpg", legend: "Centru istoric Bergamo" }
     ];
 
     var cityArticles = [{
@@ -125,8 +127,7 @@ repo.factory('RepoFactory', function() {
             id: 5,
             articleId: 2,
             type: 1,
-            text: `<p>Chiar dacă Milano reprezinta un muzeu în aer liber, in ziua 3 am luat trenul dis de dimineață și am pornit într-un day-trip în zona lacului Como.</p>`,
-            galery: [1, 2]
+            text: `<p>Chiar dacă Milano reprezinta un muzeu în aer liber, in ziua 3 am luat trenul dis de dimineață și am pornit într-un day-trip în zona lacului Como.</p>`
         },
         {
             id: 6,
@@ -141,9 +142,16 @@ repo.factory('RepoFactory', function() {
             articleId: 2,
             type: 2,
             text: `<p> Am strabatut străzile preț de câteva ore, apoi am urcat iar în vaporaș pentru a ajunge în orașul Como. Daca din Varenna in Bellagio vaporașul a facut 15-20 de minute, din Bellagio până în Como am facut aproximativ 2 ore. De o parte și de alta a lacului se vedeau localități boeme, cu proprietăți ce păreau scumpe.</p>
-            <p>În Como am servit cina în centrul orașului după care ne-am îndreptat spre gară pentru a lua trenul înapoi spre Milano. </p`,
-            galery: [8, 10]
-        }
+            <p>În Como am servit cina în centrul orașului după care ne-am îndreptat spre gară pentru a lua trenul înapoi spre Milano, unde am început să facem bagajele de plecare deoarece în dimineața urmatoare vom pleca iar devreme spre Bergamo.</p>
+            <p>Cu trollerele după noi am pornit sa descoperim ultima destinație a city-break-ului.</p>`,
+            galery: [8, 10, 12, 13]
+        },
+        {
+            id: 8,
+            articleId: 2,
+            type: 1,
+            text: `<p>Am urcat cu funicularul la cetatea Bergamo unde preț de câteva ore ne-am pierdut pe straduțe medievale pavate cu dale de piatră. La pranz, am coborât dealul pe jos iar de la baza lui am luat un autobuz până la aeroportul, am luat avionul și... gata. București.</p>`
+        },
     ];
 
     //#region Getters

@@ -27,7 +27,7 @@ paragraphsApp.directive("photoCarousel", function() {
         replace: true,
         scope: {
             photos: '=',
-            'car-id': '='
+            carId: '='
         },
         link: function(scope, element, attrs) {}
     };
