@@ -1,8 +1,9 @@
 ﻿var repo = angular.module("repositoryModule", []);
 repo.factory('RepoFactory', function() {
     var articleLines = [
-        { id: 1, order: 1 },
-        { id: 2, order: 2 },
+        { id: 1, order: 2 },
+        { id: 2, order: 3 },
+        { id: 3, order: 1 }
     ];
 
     var countries = [
@@ -84,6 +85,19 @@ repo.factory('RepoFactory', function() {
             category: "Europa",
             link: "/romania.html",
             description: "Itinerariu de 5 zile în Bucovina, Iași și Piatra Neamț."
+        },
+        {
+            id: 4,
+            banner: "img/banners/ciucas.jpg",
+            thumbnail: "img/galery/thumbnailCiucas.png",
+            isPopular: true,
+            title: "Vârful Ciucaș, hiking în Bucegi",
+            date: "August 2020",
+            country: GetCountryById(2).name,
+            articleLineId: 3,
+            category: "Europa",
+            link: "circuite.html?varful-ciucas-hiking-in-bucegi",
+            description: "Locul în care să mergi în timp de pandemie dacă ai puțină condiție fizică și dorința de a fi înconjurat de natură."
         }
     ];
 
@@ -142,7 +156,7 @@ repo.factory('RepoFactory', function() {
             articleId: 2,
             type: 2,
             text: `<p> Am strabatut străzile preț de câteva ore, apoi am urcat iar în vaporaș pentru a ajunge în orașul Como. Daca din Varenna in Bellagio vaporașul a facut 15-20 de minute, din Bellagio până în Como am facut aproximativ 2 ore. De o parte și de alta a lacului se vedeau localități boeme, cu proprietăți ce păreau scumpe.</p>
-            <p>În Como am servit cina în centrul orașului după care ne-am îndreptat spre gară pentru a lua trenul înapoi spre Milano, unde am început să facem bagajele de plecare deoarece în dimineața urmatoare vom pleca iar devreme spre Bergamo.</p>
+            <p>În Como am servit cina în centrul orașului după care ne-am îndreptat spre gară pentru a lua trenul înapoi spre Milano, unde am început să facem bagajele deoarece în dimineața urmatoare am plecat, iar, devreme spre Bergamo.</p>
             <p>Cu trollerele după noi am pornit sa descoperim ultima destinație a city-break-ului.</p>`,
             galery: [8, 10, 12, 13]
         },
