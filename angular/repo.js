@@ -25,7 +25,8 @@ repo.factory('RepoFactory', function() {
         { id: 10, path: "img/galery/como6.jpg", legend: "Bellagio" },
         { id: 11, path: "img/galery/como7.jpg", legend: "Portul Como" },
         { id: 12, path: "img/galery/como8.jpg", legend: "Funicular Bergamo" },
-        { id: 13, path: "img/galery/como9.jpg", legend: "Centru istoric Bergamo" }
+        { id: 13, path: "img/galery/como9.jpg", legend: "Centru istoric Bergamo" },
+        { id: 14, path: "img/galery/ciucas0.jpg", legend: "Traseu" }
     ];
 
     var cityArticles = [{
@@ -83,7 +84,7 @@ repo.factory('RepoFactory', function() {
             country: GetCountryById(2).name,
             articleLineId: 2,
             category: "Europa",
-            link: "/romania.html",
+            link: "circuite.html?romania-circuit-in-bucovina",
             description: "Itinerariu de 5 zile în Bucovina, Iași și Piatra Neamț."
         },
         {
@@ -165,6 +166,30 @@ repo.factory('RepoFactory', function() {
             articleId: 2,
             type: 1,
             text: `<p>Am urcat cu funicularul la cetatea Bergamo unde preț de câteva ore ne-am pierdut pe straduțe medievale pavate cu dale de piatră. La pranz, am coborât dealul pe jos iar de la baza lui am luat un autobuz până la aeroportul, am luat avionul și... gata. București.</p>`
+        },
+        {
+            id: 1,
+            articleId: 4,
+            type: 4,
+            text: `<div>
+                        <div class="location-pin">Vârful Ciucaș</div>
+                        <div class="location-pin">Bucegi</div>  
+                        <div class="location-pin">Prahova</div>    
+                    </div>
+                    <p>Atunci când nu ai ce face într-un weekend frumos de vară și vrei ca pe lângă natură să faci și puțin efort fizic, atunci pleci pe munți spre cucerirea vârfurilor din Carpații Românești. La doar 2 ore de București se afla comuna Cheia, locul unde rămâne mașina, ne echipăm corespunzător și plecăm pe munți.</p>`,
+            galery: [14]
+        },
+        {
+            id: 8,
+            articleId: 1,
+            type: 1,
+            text: `<p>Scuze... încă nu am scris nimic :( Promit să revin!</p>`
+        }, ,
+        {
+            id: 8,
+            articleId: 3,
+            type: 1,
+            text: `<p>Scuze... încă nu am scris nimic :( Promit să revin!</p>`
         },
     ];
 
