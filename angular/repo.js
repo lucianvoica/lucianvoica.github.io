@@ -15,7 +15,14 @@ repo.factory('RepoFactory', function() {
         { id: 1, path: "img/galery/italia1.jpg", legend: "Domul din Milano" },
         { id: 2, path: "img/galery/italia2.jpg", legend: "Galeriile Vittorio Emanuele II" },
         { id: 3, path: "img/galery/thumbnailMilano.jpg", legend: "Milano" },
-        { id: 4, path: "img/galery/italia4.jpg", legend: "Harta circuit" }
+        { id: 4, path: "img/galery/italia4.jpg", legend: "Hartă circuit" },
+        { id: 5, path: "img/galery/como1.jpg", legend: "Lacul Como, Varenna" },
+        { id: 6, path: "img/galery/como2.jpeg", legend: "Faleza Varenna" },
+        { id: 7, path: "img/galery/como3.jpg", legend: "Vila Monastero , Varenna" },
+        { id: 8, path: "img/galery/como4.jpg", legend: "Bellagio" },
+        { id: 9, path: "img/galery/como5.jpg", legend: "Vaporaș pe lacul Como" },
+        { id: 10, path: "img/galery/como6.jpg", legend: "Bellagio" },
+        { id: 11, path: "img/galery/como7.jpg", legend: "Portul Como" }
     ];
 
     var cityArticles = [{
@@ -41,8 +48,8 @@ repo.factory('RepoFactory', function() {
 
     var articles = [{
             id: 1,
-            banner: "img/elvetia/banner.jpg",
-            thumbnail: "img/elvetia/thumbnail.png",
+            banner: "img/banners/elvetia.jpg",
+            thumbnail: "img/galery/thumbnailElvetia.png",
             isPopular: true,
             title: "Elveția: simplitate și tehnologie",
             date: "Februarie 2019",
@@ -54,8 +61,8 @@ repo.factory('RepoFactory', function() {
         },
         {
             id: 2,
-            banner: "img/italia/banner.jpg",
-            thumbnail: "img/italia/thumbnail.png",
+            banner: "img/banners/como.jpg",
+            thumbnail: "img/galery/thumbnailMilano1.png",
             isPopular: true,
             title: "Italia: Milano și lacul Como",
             date: "Mai 2019",
@@ -67,7 +74,7 @@ repo.factory('RepoFactory', function() {
         },
         {
             id: 3,
-            banner: "img/romania/banner.jpg",
+            banner: "img/banners/voronet.jpg",
             title: "România: circuit în Bucovina",
             date: "august 2019",
             country: GetCountryById(2).name,
@@ -82,12 +89,14 @@ repo.factory('RepoFactory', function() {
             id: 1,
             articleId: 2,
             type: 4,
-            text: '<table class="itinerary"><tr>\
-                    <td>1</td><td>Milano</td>\
-                    <td>3</td><td>Varenna, Bellagio, Como</td>\
-                    <td>4</td><td>Bergamo</td>\
-                    <td></td>\
-                <tr></table>' + "<p>Italia, ce țară minunată. Pizza, paste și iubire - primele 3 cuvinte-clișeu la care mă gândesc atunci când vine vorba de Italia.</p>",
+            text: `<div>
+                        <div class="location-pin">Milano</div>
+                        <div class="location-pin">Varenna</div>  
+                        <div class="location-pin">Bellagio</div>
+                        <div class="location-pin">Como</div> 
+                        <div class="location-pin">Bergamo</div>           
+                    </div>
+                ` + "<p>Italia, ce țară minunată. Pizza, paste și iubire - primele 3 cuvinte-clișeu la care mă gândesc atunci când vine vorba de Italia.</p>",
             galery: [4]
         },
         {
@@ -101,16 +110,39 @@ repo.factory('RepoFactory', function() {
             id: 3,
             articleId: 2,
             type: 2,
-            text: "<p>Am lăsat bagajele la cazare și am început plimbarea.</p>" +
-                "<p>Fiind prima dată când ajung acolo, clar că primele obiective pe care am vrut să le văd au fost cele care au facut Milano celebru oriunde în lume. So, direcția centru: piața domului și galeriile Vittorio Emanuele II.</p>",
+            text: `<p>Am lăsat bagajele la cazare și am început plimbarea.</p>
+                   <p>Fiind prima dată când ajung acolo, clar că primele obiective pe care am vrut să le văd au fost cele care au facut Milano celebru oriunde în lume. So, direcția centru: piața domului și galeriile Vittorio Emanuele II.</p>`,
+            galery: [1, 2]
+        },
+        // {
+        //     id: 4,
+        //     articleId: 2,
+        //     type: 6,
+        //     text: "<p>După care am început călătoria la pas prin oraș și am vizitat foarte multe lucruri.</p>",
+        //     cityArticle: 1
+        // }
+        {
+            id: 5,
+            articleId: 2,
+            type: 1,
+            text: `<p>Chiar dacă Milano reprezinta un muzeu în aer liber, in ziua 3 am luat trenul dis de dimineață și am pornit într-un day-trip în zona lacului Como.</p>`,
             galery: [1, 2]
         },
         {
-            id: 4,
+            id: 6,
             articleId: 2,
-            type: 6,
-            text: "<p>După care am început călătoria la pas prin oraș și am vizitat foarte multe lucruri.</p>",
-            cityArticle: 1
+            type: 3,
+            text: `<p>Prima oprire: Varenna. Primul contact cu lacul Como: magnific. In jurul orei 9 se mai putea zări puțină ceață în depărtare. Pe faleza lacului am ajuns la Vila Monastero, am mâncat o pizza și am plecat cu un vaporaș spre Bellagio.</p>
+                   <p>Bellagio este o localitate puțin mai aglomerată, înconjurată de apă, străduțe înguste și același aer cochet italian. </p>`,
+            galery: [5, 6, 7, 9, 11]
+        },
+        {
+            id: 7,
+            articleId: 2,
+            type: 2,
+            text: `<p> Am strabatut străzile preț de câteva ore, apoi am urcat iar în vaporaș pentru a ajunge în orașul Como. Daca din Varenna in Bellagio vaporașul a facut 15-20 de minute, din Bellagio până în Como am facut aproximativ 2 ore. De o parte și de alta a lacului se vedeau localități boeme, cu proprietăți ce păreau scumpe.</p>
+            <p>În Como am servit cina în centrul orașului după care ne-am îndreptat spre gară pentru a lua trenul înapoi spre Milano. </p`,
+            galery: [8, 10]
         }
     ];
 

@@ -94,45 +94,22 @@ body {
     background-color: #ffffff9c;
 }
 
-table.itinerary {
-    width: 100%;
-    padding-bottom: 15px;
+.location-pin:before {
+    font-family: 'FontAwesome';
+    position: relative;
+    content: "\f041";
+    margin-right: 3px;
 }
 
-table.itinerary tr {
-    text-align: center;
+.location-pin {
+    display: inline-block;
     color: #9c7e35;
+    padding-right: 20px;
 }
 
-table.itinerary tr td {
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-table.itinerary tr td:nth-child(odd) {
-    background-color: #9c7e35;
-    color: white;
-    font-size: 14px;
-    border-radius: 25px;
-}
-
-table.itinerary tr td:nth-child(odd):not(:last-child):before {
-    font-family: 'FontAwesome';
-    position: relative;
-    left: -3px;
-    content: "\f073";
-}
-
-table.itinerary tr td:nth-child(odd):not(:last-child):after {
-    font-family: 'FontAwesome';
-    position: relative;
-    left: 3px;
-    content: "\f061";
-}
-
-table.itinerary tr td:last-child:before {
-    font-family: 'FontAwesome';
-    position: relative;
-    content: "\f015";
-    font-size: 20px;
+.blog_style1 .blog_text .blog_text_inner,
+.blog_style1.small .blog_text .blog_text_inner {
+    margin-top: -60px;
+    padding: 20px 30px 30px;
+    background: linear-gradient(#ffffffc7, white);
 }
